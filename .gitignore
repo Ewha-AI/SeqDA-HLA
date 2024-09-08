@@ -1,0 +1,4 @@
+__pycache__/
+
+model/options.json
+model/weights.hdf5
