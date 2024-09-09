@@ -9,7 +9,7 @@ SeqDA-HLA is a pan-specific model that predicts peptide-HLA class I binding usin
   <img src="FINAL_Model.jpg" alt="overview">
 </div>
 
-SeqDA-HLA model takes two primary inputs: HLA and peptide sequences encoded using pre-trained ELMo representations. For effective feature fusion, these inputs are processed by a dual attention network consisting of two distinct attention modules: a self-aligned cross-attention module and a self-attention module, followed by feedforward layers. Finally, a classifier is applied to make the final prediction of the binding score for the peptide-HLA complex.
+SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-trained ELMo representations. These inputs are first processed by a self-aligned cross-attention module, followed by feedforward layers and then a self-attention module. Finally, a classifier is applied to predict the binding score for the peptide-HLA complex.
 
 
 ## 2. Results
@@ -26,9 +26,9 @@ SeqDA-HLA model takes two primary inputs: HLA and peptide sequences encoded usin
 ### **Attention Heatmap**
 The SeqDA-HLA model leverages attention mechanisms to visualize the binding patterns between HLA and peptides.
 <p align="center" style="display: flex; justify-content: center; gap: 0; margin: 0;">
-  <img src="out_HLA-A0101.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
-  <img src="out_HLA-A0201.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
-  <img src="out_HLA-B1801.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
+  <img src="out_HLA-A0101.jpg" alt="heatmap" width="20%" style="margin: 0; padding: 0;"/>
+  <img src="out_HLA-A0201.jpg" alt="heatmap" width="20%" style="margin: 0; padding: 0;"/>
+  <img src="out_HLA-B1801.jpg" alt="heatmap" width="20%" style="margin: 0; padding: 0;"/>
 </p>
 
 ## 3. Datasets
