@@ -58,7 +58,11 @@ conda activate seqdahla
     - `options.json`: Options file for the SeqVec model.
 
 2. Place these files in the `model` directory: `model/weights.hdf5`, `model/options.json`
-
+```bash
+├── model
+    ├── weights.hdf5
+    └── options.json
+``` 
 • HLA Embeddings
 
 We provide the HLA embeddings file `total_HLA_embedding.hdf5`, generated using pre-trained SeqVec in the `utils` directory.
