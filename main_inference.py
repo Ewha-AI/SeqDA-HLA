@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from allennlp.commands.elmo import ElmoEmbedder
 from utils.data import HLApepDataset, generate_representation
 from utils.mhc_total import mhc_pseudo
-from model.seqdahla import TripleAttention_revised
+from model.seqdahla import SeqDAHLA
 
 import torch
 from torch.utils.data import DataLoader
@@ -98,7 +98,7 @@ def main(peptides, hlas, bn):
     test_loader = DataLoader(test_dataset, batch_size=bn, shuffle=False, num_workers=CFG['NUM_WORKERS'])
 
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-    model = TripleAttention_revised(args)
+    model = SeqDAHLA(args)
     model_checkpoint = torch.load('model/model.pth')
     model_checkpoint = {k: v for k, v in model_checkpoint.items() if k in model_checkpoint}
     model.load_state_dict(model_checkpoint['model_state_dict'])
