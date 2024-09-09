@@ -9,7 +9,7 @@ SeqDA-HLA is a pan-specific model that predicts peptide-HLA class I binding usin
   <img src="Model.jpg" alt="overview">
 </div>
 <br/>
-SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-trained ELMo representations. These inputs are first processed by a self-aligned cross-attention module, followed by feedforward layers and then a self-attention module. Finally, a classifier is applied to predict the binding score for the peptide-HLA complex.
+SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-trained ELMo representations. These inputs are first processed by a self-aligned cross-attention module, followed by feedforward layers and a self-attention module. Finally, a classifier is applied to predict the binding score for the peptide-HLA complex.
 
 
 ## 2. Results
