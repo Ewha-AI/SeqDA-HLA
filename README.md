@@ -57,7 +57,7 @@ conda activate seqdahla
     - `weights.hdf5`: Pre-trained weights for the SeqVec model.
     - `options.json`: Options file for the SeqVec model.
 
-2. Place these files in the `model` directory: `model/weights.hdf5`, `model/options.json`
+2. Place these files in the `model` directory.
 ```bash
 ├── model
     ├── weights.hdf5
