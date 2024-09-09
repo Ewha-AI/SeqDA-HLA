@@ -59,8 +59,8 @@ conda activate seqdahla
 2. Place these files in the `model` directory.
 ```bash
 ├── model
-    ├── weights.hdf5
-    └── options.json
+│   ├── weights.hdf5
+│   └── options.json
 ```
 <br/>
 • HLA Embeddings
