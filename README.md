@@ -62,7 +62,8 @@ conda activate seqdahla
 ├── model
     ├── weights.hdf5
     └── options.json
-``` 
+```
+<br/>
 • HLA Embeddings
 
 We provide the HLA embeddings file `total_HLA_embedding.hdf5`, generated using pre-trained SeqVec in the `utils` directory.
