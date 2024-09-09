@@ -36,7 +36,17 @@ We integrated datasets retrieved from several sources, including [NetMHCpan-4.0]
 
 ## 4. Getting Started
 ### 1) Installation
-Install pip packages via `pip install -r requirements.txt`.
+Download the code:
+```
+git clone https://github.com/Ewha-AI/SeqDA-HLA.git
+cd seqdahla
+```
+
+A suitable conda environment named `seqdahla` can be created and activated with:
+```
+conda env create -f environment.yaml
+conda activate seqdahla
+```
 
 ### 2) Downloading the pre-trained SeqVec weights
 
