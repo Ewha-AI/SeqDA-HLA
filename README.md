@@ -24,13 +24,12 @@ SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-
 |       |   ✓   |   ✓   |   0.7764  |  0.8514  |  0.7745  |  0.5528  |
 
 ### **Attention Heatmap**
+The SeqDA-HLA model leverages attention mechanisms to visualize the binding patterns between HLA and peptides.
 <p align="center" style="display: flex; justify-content: center; gap: 0; margin: 0;">
   <img src="out_HLA-A0101.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
   <img src="out_HLA-A0201.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
   <img src="out_HLA-B1801.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
 </p>
-
-The SeqDA-HLA model leverages attention mechanisms to visualize the binding patterns between HLA and peptides.
 
 ## 3. Datasets
 We integrated datasets retrieved from several sources, including [NetMHCpan-4.0](https://services.healthtech.dtu.dk/suppl/immunology/NetMHCpan-4.0/), [NetMHCpan-4.1](https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/), [SMMPMBEC](http://tools.iedb.org/mhci/download/), and [TransPHLA](https://github.com/a96123155/TransPHLA-AOMP/tree/master/Dataset), and used them both for training and evaluating the peptide-HLA binding prediction performance of our proposed model, SeqDA-HLA.
