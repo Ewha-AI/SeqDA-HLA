@@ -64,7 +64,7 @@ conda activate seqdahla
 ```
 <br/>
 • HLA Embeddings
-
+<br/>
 We provide the HLA embeddings file `total_HLA_embedding.hdf5`, generated using pre-trained SeqVec in the `utils` directory.
 The file includes a dictionary of HLA type and the corresponding representation.
 
