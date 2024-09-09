@@ -63,9 +63,7 @@ conda activate seqdahla
 │   └── options.json
 ```
 <br/>
-• HLA Embeddings
-<br/>
-We provide the HLA embeddings file `total_HLA_embedding.hdf5`, generated using pre-trained SeqVec in the `utils` directory.
+• HLA EmbeddingWe provide the HLA embeddings file `total_HLA_embedding.hdf5`, generated using pre-trained SeqVec in the 'utils' directory.
 The file includes a dictionary of HLA type and the corresponding representation.
 
 ## 5. Model Inference
