@@ -63,11 +63,12 @@ conda activate seqdahla
 │   └── options.json
 ```
 <br/>
-• HLA EmbeddingWe provide the HLA embeddings file 'total_HLA_embedding.hdf5', generated using pre-trained SeqVec in the 'utils' directory.
+• HLA Embeddings
+We provide the HLA embeddings file `total_HLA_embedding.hdf5`, generated using pre-trained SeqVec in the `utils` directory.
 The file includes a dictionary of HLA type and the corresponding representation.
 
 ## 5. Model Inference
-Once your test data is ready, you can use the 'main_inference.py' script to perform model inference. Execute the following command:
+Once your test data is ready, you can use the `main_inference.py` script to perform model inference. Execute the following command:
 
 ```
 python main_inference.py
