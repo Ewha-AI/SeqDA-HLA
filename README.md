@@ -32,7 +32,7 @@ The SeqDA-HLA model leverages attention mechanisms to visualize the binding patt
 </p>
 
 ## 3. Datasets
-We integrated datasets retrieved from several sources, including [NetMHCpan-4.0](https://services.healthtech.dtu.dk/suppl/immunology/NetMHCpan-4.0/), [NetMHCpan-4.1](https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/), [SMMPMBEC](http://tools.iedb.org/mhci/download/), and [TransPHLA](https://github.com/a96123155/TransPHLA-AOMP/tree/master/Dataset), and used them both for training and evaluating the peptide-HLA binding prediction performance of our proposed model, SeqDA-HLA.
+We integrated datasets retrieved from several sources, including [NetMHCpan-4.0](https://services.healthtech.dtu.dk/suppl/immunology/NetMHCpan-4.0/), [NetMHCpan-4.1](https://services.healthtech.dtu.dk/suppl/immunology/NAR_NetMHCpan_NetMHCIIpan/), [SMMPMBEC](http://tools.iedb.org/mhci/download/), and [TransPHLA](https://github.com/a96123155/TransPHLA-AOMP/tree/master/Dataset). Two types of test data was used to evaluate the perfomance of peptide-HLA binding prediction of our proposed model, SeqDA-HLA.
 
 ## 4. Getting Started
 ### 1) Installation
