@@ -39,7 +39,7 @@ We integrated datasets retrieved from several sources, including [NetMHCpan-4.0]
 Download the code:
 ```
 git clone https://github.com/Ewha-AI/SeqDA-HLA.git
-cd seqdahla
+cd SeqDA-HLA
 ```
 
 A suitable conda environment named `seqdahla` can be created and activated with:
