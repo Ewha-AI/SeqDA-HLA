@@ -75,5 +75,5 @@ Once your test data is ready, you can perform model inference using the `main_in
 
 ```
 python main_inference.py            # draw attention map and inference using model from one-fold
-python main_inference_final.py      # inference code of the final proposed method
+python main_inference_final.py      # inference code of the FINAL proposed method
 ```
