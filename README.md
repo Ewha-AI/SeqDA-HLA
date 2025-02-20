@@ -74,6 +74,6 @@ The file includes a dictionary of HLA type and the corresponding representation.
 Once your test data is ready, you can perform model inference using the `main_inference.py` or `main_inference_final.py` script. Execute the following command:
 
 ```
-python main_inference.py            # inference using model from one-fold
+python main_inference.py            # draw attention map and inference using model from one-fold
 python main_inference_final.py      # inference code of the final proposed method
 ```
