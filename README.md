@@ -16,14 +16,14 @@ SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-
 ### **Evaluation Metrics**
 **A**: pre-trained ELMo representations, **B**: Self-aligned cross-attention module, **C**: Self-attention module.
 
-**A'**: BLOSUM encoding, **B'**: typical cross-attention module.
+**A***: BLOSUM encoding, **B***: typical cross-attention module.
 
 |   A   |   B   |   C   | Accuracy  |   AUC    |   F1     |   MCC    |
 |:-----:|:-----:|:-----:|:---------:|:--------:|:--------:|:--------:|
 |   ✓   |   ✓   |   ✓   | **0.9412** | **0.9854** | **0.9402** | **0.8831** |
 |   ✓   |   ✓   |       |   0.9231  |  0.9794  |  0.9206  |  0.8481  |
-|   ✓   |   B'  |       |   0.9354  |  0.9842   |  0.9334  |  0.8724  |
-|   A'  |   ✓   |   ✓   |   0.7909  |  0.8689  |  0.8027  |  0.5857  |
+|   ✓   |   B*  |       |   0.9354  |  0.9842   |  0.9334  |  0.8724  |
+|   A*  |   ✓   |   ✓   |   0.7909  |  0.8689  |  0.8027  |  0.5857  |
 
 ### **Attention Heatmap**
 The SeqDA-HLA model leverages attention mechanisms to visualize the binding patterns between HLA and peptides. Each row shows similar binding patterns of different peptides binding to the same HLA type.
