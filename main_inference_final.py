@@ -114,7 +114,7 @@ def main(fold, peptides, hlas, bn):
 if __name__ == '__main__':
 
     hlas = ["HLA-A*01:01", "HLA-A*02:01", "HLA-B*18:01"]
-    peptides = ['RTPAAVEKR', 'GPGLYDPTT', 'LFGRDLSY', 'AQIVQKGGQ', 'TEKMVHIY', 'VEKAIAHY']
+    peptides = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY']
 
     hla_in = [hla for hla in hlas for _ in range(len(peptides))]
     peptide_in = peptides * len(hlas)
