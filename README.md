@@ -14,9 +14,9 @@ SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-
 
 ## 2. Results
 ### **Evaluation Metrics**
-**A**: pre-trained ELMo representations, **B**: Self-aligned cross-attention module, **C**: Self-attention module.
+**A**: pre-trained ELMo representations, **B**: Self-aligned Cross-attention module, **C**: Self-attention module.
 
-**A***: BLOSUM encoding, **B***: typical cross-attention module.
+**A***: BLOSUM encoding, **B***: typical Cross-attention module.
 
 |   A   |   B   |   C   | Accuracy  |   AUC    |   F1     |   MCC    |
 |:-----:|:-----:|:-----:|:---------:|:--------:|:--------:|:--------:|
