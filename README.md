@@ -74,6 +74,6 @@ Once your test data is ready, you can perform model inference using the `main_in
 `main_inference_final.py`: inference code of the proposed method
 
 ```
-python main_inference.py
-python main_inference_final.py
+python main_inference.py        # inference using one-fold model 
+python main_inference_final.py  # inference code of the proposed method
 ```
