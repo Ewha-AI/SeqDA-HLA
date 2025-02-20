@@ -27,7 +27,7 @@ SeqDA-HLA takes two primary inputs: HLA and peptide sequences encoded using pre-
 
 ### **Attention Heatmap**
 The SeqDA-HLA model leverages attention mechanisms to visualize the binding patterns between HLA and peptides. Each row shows similar binding patterns of different peptides binding to the same HLA type.
-<p align="center" style="display: flex; justify-content: center;  gap: 10px;; margin: 0;">
+<p align="center" style="display: flex; justify-content: center; gap: 30px; margin: 0;">
   <img src="out_HLA-A0101.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
   <img src="out_HLA-A0201.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
   <img src="out_HLA-B1801.jpg" alt="heatmap" width="30%" style="margin: 0; padding: 0;"/>
