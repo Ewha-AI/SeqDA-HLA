@@ -109,50 +109,7 @@ def main(fold, peptides, hlas, bn):
     final_pred = [1 if i>=0.5 else 0 for i in prob_test]
 
     return prob_test, final_pred, attn
-
-
-def draw_attn(fold, hlas, peps, attn, attn_type, cs):
-    n_heads = 3
-    attn_type_dict = {'aqq': 0, 'aqs': 1, 'cross_a': 2, 'self_a': 3}
-
-    attns = attn[attn_type_dict[attn_type]]  # [bs, heads, 34, 34]
-
-    for start_idx in range(0, len(hlas), cs):
-        end_idx = min(start_idx + cs, len(hlas))
-        fig, axes = plt.subplots(nrows=(end_idx - start_idx), ncols=1, figsize=(5, (end_idx - start_idx) * 2))
-
-        if end_idx - start_idx == 1:
-            axes = [axes]
-
-        for i, (hla, pep) in enumerate(zip(hlas[start_idx:end_idx], peps[start_idx:end_idx])):
-            for head in range(n_heads):
-                if head == 0:
-                    temp = np.array(attns[start_idx + i, head, :, :len(pep)].cpu())
-                else:
-                    temp += np.array(attns[start_idx + i, head, :, :len(pep)].cpu())
-
-            hla_pseudo = mhc_pseudo[hla]
-            temp_pd = pd.DataFrame(np.array(temp), index=list(hla_pseudo), columns=list(pep)).T
-
-            fig.patch.set_facecolor('white')
-            cmap = 'cividis'
-            sns.heatmap(temp_pd, ax=axes[i], cmap=cmap, square=True, cbar=False)
-
-            axes[i].set_title('{} | {} | len{} '.format(hla, pep, len(pep)), fontsize=13)
-            axes[i].set_xlabel('HLA', fontsize=13)
-            axes[i].set_ylabel('Peptide', fontsize=13)
-
-            axes[i].set_yticks(range(len(pep)))
-            axes[i].set_yticklabels(list(pep), fontsize=11, rotation=0)
-
-            axes[i].set_xticks(range(len(hla_pseudo)))
-            axes[i].set_xticklabels(list(hla_pseudo), fontsize=11)
-
-        plt.tight_layout()
-        hla_name = hla.replace('*', '').replace(':', '')
-        plt.savefig('./out_{}.jpg'.format(fold, hla_name), bbox_inches='tight', dpi=600)
-        plt.close(fig)
-
+    
 
 if __name__ == '__main__':
 
@@ -167,7 +124,6 @@ if __name__ == '__main__':
         probability, prediction, attn = main(fold, peptide_in, hla_in, len(hla_in))
         total_probs.append(probability)
         total_preds.append(prediction)
-        draw_attn(fold, hla_in, peptide_in, attn, 'self_a', len(peptides))
 
     # [FINAL] Average of 5-folds
     final_prob = np.array(total_probs).mean(axis=0)
