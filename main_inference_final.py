@@ -106,9 +106,7 @@ def main(fold, peptides, hlas, bn):
     
     prob_test, attn = test_model(model, test_loader, device)
 
-    final_pred = [1 if i>=0.5 else 0 for i in prob_test]
-
-    return prob_test, final_pred, attn
+    return prob_test, attn
     
 
 if __name__ == '__main__':
