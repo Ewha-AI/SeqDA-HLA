@@ -23,11 +23,13 @@ class HLApepDataset(Dataset):
 
 def generate_representation(seqvec, seq_list):
     '''seqvec: pre-trained model
-       char_seq_list: pep seq list
+       seq_list: list of peptide sequences
     '''
+    seqs = [list(seq) for seq in seq_list]
+    seqs.sort(key=len)
+    embeddings = seqvec.embed_sentences(seqs)  # Batch embedding 적용
     embeddings_list = []
-    for seq in seq_list:
-        embedding  = seqvec.embed_sentence(list(seq))
+    for embedding in embeddings:
         residue_embd = torch.tensor(embedding).sum(dim=0)
         L, _ = residue_embd.shape
         if L < 34:
