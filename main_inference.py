@@ -157,7 +157,7 @@ def draw_attn(hlas, peps, attn, attn_type, cs):
 if __name__ == '__main__':
 
     hlas = ["HLA-A*01:01", "HLA-A*02:01", "HLA-B*18:01"]
-    peptides = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY']
+    peptides = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY']  # Make sure there are no duplicate peptide sequences
 
     hla_in = [hla for hla in hlas for _ in range(len(peptides))]
     peptide_in = peptides * len(hlas)
