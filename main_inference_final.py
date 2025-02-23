@@ -117,11 +117,10 @@ if __name__ == '__main__':
     hla_in = [hla for hla in hlas for _ in range(len(peptides))]
     peptide_in = peptides * len(hlas)
     
-    total_probs, total_preds = [],[]
+    total_probs = []
     for fold in range(1,6):
-        probability, prediction, attn = main(fold, peptide_in, hla_in, len(hla_in))
+        probability, attn = main(fold, peptide_in, hla_in, len(hla_in))
         total_probs.append(probability)
-        total_preds.append(prediction)
 
     # [FINAL] Average of 5-folds
     final_prob = np.array(total_probs).mean(axis=0).tolist()
