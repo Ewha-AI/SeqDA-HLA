@@ -90,7 +90,6 @@ def main(peptides, hlas, bn):
     dummy_peptide = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY','QIFNKPYWL'] 
 
     pep_emb_list = generate_representation(weights, options, dummy_peptide, peptides)
-    print(pep_emb_list.shape)
         
     hla_emb_list = []
     with h5py.File('utils/total_HLA_embeddings.hdf5', 'r') as f:
