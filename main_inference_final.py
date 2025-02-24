@@ -124,6 +124,7 @@ if __name__ == '__main__':
 
     # [FINAL] Average of 5-folds
     final_prob = np.array(total_probs).mean(axis=0).tolist()
+    final_prob = np.atleast_1d(final_prob)
     final_pred = [1 if i>=0.5 else 0 for i in final_prob]
     print("HLA \t\t Peptide \t Probability \t Binding")
     for i, j, k, l in zip(hla_in, peptide_in, final_prob, final_pred):
