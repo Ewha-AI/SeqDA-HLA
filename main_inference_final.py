@@ -127,6 +127,8 @@ if __name__ == '__main__':
     final_prob = np.array(total_probs).mean(axis=0).tolist()
     final_prob = np.atleast_1d(final_prob)
     final_pred = [1 if i>=0.5 else 0 for i in final_prob]
+
+    # All possible HLA-peptide pairs
     print("HLA \t\t Peptide \t Probability \t Binding")
     for i, j, k, l in zip(hla_in, peptide_in, final_prob, final_pred):
         print("%s \t %s \t" % (i, j), "{:.8f}".format(k), "\t %d" % l)
