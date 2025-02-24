@@ -84,10 +84,11 @@ def main(fold, peptides, hlas, bn):
 
     # Elmo embedding---SeqVec
     # weights and options files can be downloaded from https://github.com/rostlab/SeqVec
-    weights = 'model/weights.hdf5'
-    options = 'model/options.json'
-    seqvec = ElmoEmbedder(options, weights, cuda_device=0) # cuda_device=-1 for CPU
-    pep_emb_list = generate_representation(seqvec, peptides)
+    weights = '../../../weights.hdf5'
+    options = '../../../options.json'
+    # Stabilize internal state by dummy sequence
+    dummy_peptide = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY','QIFNKPYWL'] 
+    pep_emb_list = generate_representation(weights, options, dummy_peptide, peptides)
     
     hla_emb_list = []
     with h5py.File('utils/total_HLA_embeddings.hdf5', 'r') as f:
