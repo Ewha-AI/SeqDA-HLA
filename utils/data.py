@@ -1,5 +1,6 @@
 import torch
 import torch.nn.functional as F
+from allennlp.commands.elmo import ElmoEmbedder
 from torch.utils.data import Dataset
 import numpy as np
 
@@ -21,19 +22,26 @@ class HLApepDataset(Dataset):
         return self.HLA.shape[0]
     
 
-
-def generate_representation(seqvec, seq_list):
-    '''seqvec: pre-trained model
-       char_seq_list: pep seq list
-    '''
+def generate_representation(weights, options, dummy_peptides, peptides):
+    '''Loads ElmoEmbedder separately for each sequence'''
     embeddings_list = []
-    for seq in seq_list:
-        embedding  = seqvec.embed_sentence(list(seq))
-        residue_embd = torch.tensor(embedding).sum(dim=0)
-        L, _ = residue_embd.shape
-        if L < 34:
-            padding = (0, 0, 0, 34 - L)
-            residue_embd = F.pad(residue_embd, padding)
-        embeddings_list.append(residue_embd)
+    seq_list = dummy_peptides + peptides
+
+    with torch.no_grad():
+        seqvec = ElmoEmbedder(options, weights, cuda_device=0)
+        seqvec.elmo_bilm.eval()
+
+        for i,seq in enumerate(seq_list):
+            embedding = seqvec.embed_sentence(list(seq))
+            residue_embd = torch.tensor(embedding).sum(dim=0) 
+            
+            # Ensure consistent length
+            L, _ = residue_embd.shape
+            if L < 34:
+                padding = (0, 0, 0, 34 - L)
+                residue_embd = F.pad(residue_embd, padding)
+            
+            if i>=len(dummy_peptides): embeddings_list.append(residue_embd)
+
     final_tensor = torch.stack(embeddings_list)
     return final_tensor
