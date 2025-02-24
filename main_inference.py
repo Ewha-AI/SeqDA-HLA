@@ -164,11 +164,12 @@ if __name__ == '__main__':
 
     hla_in = [hla for hla in hlas for _ in range(len(peptides))]
     peptide_in = peptides * len(hlas)
-
+    
     probability, prediction, attn = main(peptide_in, hla_in, len(hla_in))
 
+    # All possible HLA-peptide pairs
     print("HLA \t\t Peptide \t Probability \t Binding")
     for i, j, k, l in zip(hla_in, peptide_in, probability, prediction):
         print("%s \t %s \t" % (i, j), "{:.8f}".format(k), "\t %d" % l)
     
-    # draw_attn(hla_in, peptide_in, attn, 'self_a', len(peptides))
+    draw_attn(hla_in, peptide_in, attn, 'self_a', len(peptides))
