@@ -86,8 +86,8 @@ def main(fold, peptides, hlas, bn):
     # weights and options files can be downloaded from https://github.com/rostlab/SeqVec
     weights = '../../../weights.hdf5'
     options = '../../../options.json'
-    # Stabilize internal state by dummy sequence
-    dummy_peptide = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY','QIFNKPYWL'] 
+    
+    dummy_peptide = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY','QIFNKPYWL']  # Stabilize internal state by dummy sequence
     pep_emb_list = generate_representation(weights, options, dummy_peptide, peptides)
     
     hla_emb_list = []
