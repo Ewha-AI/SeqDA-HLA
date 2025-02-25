@@ -84,8 +84,8 @@ def main(fold, peptides, hlas, bn):
 
     # Elmo embedding---SeqVec
     # weights and options files can be downloaded from https://github.com/rostlab/SeqVec
-    weights = '../../../weights.hdf5'
-    options = '../../../options.json'
+    weights = 'model/weights.hdf5'
+    options = 'model/options.json'
     
     dummy_peptide = ['YTDQFSRNY','AVAPFFKSY','LLYESPERY','LSDLGRLSY','QIFNKPYWL']  # Stabilize internal state by dummy sequence
     pep_emb_list = generate_representation(weights, options, dummy_peptide, peptides)
